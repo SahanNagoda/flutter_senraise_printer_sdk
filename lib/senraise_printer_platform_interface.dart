@@ -45,7 +45,7 @@ abstract class SenraisePrinterPlatform extends PlatformInterface {
   }
 
   Future<Void?> printTableRow(
-      List<String> data, List<int> weight, List<int> alignment) {
+      List<String> data, Int32List weight, Int32List alignment) {
     throw UnimplementedError('printTableRow() has not been implemented.');
   }
 

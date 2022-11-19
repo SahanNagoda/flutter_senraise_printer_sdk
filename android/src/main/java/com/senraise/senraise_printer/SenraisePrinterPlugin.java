@@ -73,7 +73,13 @@ public class SenraisePrinterPlugin implements FlutterPlugin, MethodCallHandler {
                 printerInterface.printBitmap(bitmap);
                 result.success("printPic success");
             } else if (call.method.equals("printTableRow")) {
-                printerInterface.printTableRow(call.argument("data"), call.argument("weight"), call.argument("alignment") );
+                Log.d(TAG, "printTableText started");
+                ArrayList<String> text = (ArrayList<String>) call.argument("data");
+                int[] weight = (int[]) call.argument("weight");
+                int[] alignment = (int[]) call.argument("alignment");
+                String[] arr = new String[text.size()];
+                arr = text.toArray(arr);
+                printerInterface.printTableRow(arr, weight, alignment );
                 result.success("printTableRow success");
             } else if (call.method.equals("printBarCode")) {
                 printerInterface.printBarCode(call.argument("data"),call.argument("symbology"),call.argument("height"),call.argument("width"));

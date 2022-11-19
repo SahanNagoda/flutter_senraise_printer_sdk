@@ -6,22 +6,6 @@ import 'package:flutter/cupertino.dart';
 
 import 'senraise_printer_platform_interface.dart';
 
-Enum PrinterAlign {left, center, right}
-
-extension PrinterAlign {
-  int get value {
-    switch (this) {
-      case PrinterAlign.left:
-        return 0;
-      case PrinterAlign.center:
-        return 1;
-        case PrinterAlign.right:
-        return 2;
-      default:
-        return 0;
-    }
-  }
-}
 class SenraisePrinter {
   Future<String?> getServiceVersion() {
     return SenraisePrinterPlatform.instance.getServiceVersion();
@@ -40,7 +24,7 @@ class SenraisePrinter {
   }
 
   Future<Void?> printTableRow(
-      List<String> data, List<int> weight, List<int> alignment) {
+      List<String> data, Int32List weight, Int32List alignment) {
     return SenraisePrinterPlatform.instance
         .printTableRow(data, weight, alignment);
   }
