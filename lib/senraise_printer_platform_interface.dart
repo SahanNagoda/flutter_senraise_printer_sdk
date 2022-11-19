@@ -31,16 +31,26 @@ abstract class SenraisePrinterPlatform extends PlatformInterface {
   Future<String?> getServiceVersion() {
     throw UnimplementedError('getServiceVersion() has not been implemented.');
   }
+
   Future<Void?> printEpson(Uint8List bytes) {
     throw UnimplementedError('printEpson() has not been implemented.');
   }
+
   Future<Void?> printText(String text) {
     throw UnimplementedError('printText() has not been implemented.');
   }
+
   Future<Void?> printPic(Uint8List pic) {
     throw UnimplementedError('printPic() has not been implemented.');
   }
-  Future<Void?> printBarCode(String data, int symbology, int height, int width){
+
+  Future<Void?> printTableRow(
+      List<String> data, List<int> weight, List<int> alignment) {
+    throw UnimplementedError('printTableRow() has not been implemented.');
+  }
+
+  Future<Void?> printBarCode(
+      String data, int symbology, int height, int width) {
     throw UnimplementedError('printBarCode() has not been implemented.');
   }
 
@@ -83,5 +93,4 @@ abstract class SenraisePrinterPlatform extends PlatformInterface {
   Future<Void?> setCode(String code) {
     throw UnimplementedError('setCode() has not been implemented.');
   }
-
 }

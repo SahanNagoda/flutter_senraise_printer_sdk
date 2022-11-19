@@ -31,6 +31,10 @@ class MethodChannelSenraisePrinter extends SenraisePrinterPlatform {
     await methodChannel.invokeMethod<String>('printPic',{"pic":pic});
   }
   @override
+  Future<Void?> printTableRow(List<String> data, List<int> weight, List<int> alignment){
+    await methodChannel.invokeMethod<String>('printTableRow',{"data":data,"weight":weight,"alignment":alignment});
+  }
+  @override
   Future<Void?> printBarCode(String data, int symbology, int height, int width) async{
     await methodChannel.invokeMethod<String>('printPic',{"data":data,"symbology":symbology,"height":height,"width":width});
   }
