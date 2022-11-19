@@ -24,9 +24,9 @@ class SenraisePrinter {
   }
 
   Future<Void?> printTableRow(
-      List<String> data, Int32List weight, Int32List alignment) {
-    return SenraisePrinterPlatform.instance
-        .printTableRow(data, weight, alignment);
+      List<String> data, List<int> weight, List<int> alignment) {
+    return SenraisePrinterPlatform.instance.printTableRow(
+        data, Int32List.fromList(weight), Int32List.fromList(alignment));
   }
 
   Future<Void?> printBarCode(
