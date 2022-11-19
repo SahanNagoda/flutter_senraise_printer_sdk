@@ -52,7 +52,7 @@ class SenraisePrinter {
     return SenraisePrinterPlatform.instance.nextLine(line);
   }
 
-  Future<Void?> setTextBold(Bool bold) {
+  Future<Void?> setTextBold(bool bold) {
     return SenraisePrinterPlatform.instance.setTextBold(bold);
   }
 

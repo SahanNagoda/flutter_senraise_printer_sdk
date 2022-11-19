@@ -70,7 +70,7 @@ abstract class SenraisePrinterPlatform extends PlatformInterface {
     throw UnimplementedError('nextLine() has not been implemented.');
   }
 
-  Future<Void?> setTextBold(Bool bold) {
+  Future<Void?> setTextBold(bool bold) {
     throw UnimplementedError('setTextBold() has not been implemented.');
   }
 

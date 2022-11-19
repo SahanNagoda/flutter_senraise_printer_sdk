@@ -77,7 +77,7 @@ class MethodChannelSenraisePrinter extends SenraisePrinterPlatform {
   }
 
   @override
-  Future<Void?> setTextBold(Bool bold) async {
+  Future<Void?> setTextBold(bool bold) async {
     await methodChannel.invokeMethod<String>('setTextBold', {"bold": bold});
   }
 

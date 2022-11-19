@@ -9,7 +9,7 @@ import android.graphics.BitmapFactory;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
-
+import java.util.ArrayList;
 import androidx.annotation.NonNull;
 
 import java.io.ByteArrayInputStream;
@@ -31,7 +31,7 @@ public class SenraisePrinterPlugin implements FlutterPlugin, MethodCallHandler {
     /// when the Flutter Engine is detached from the Activity
     private MethodChannel channel;
     PrinterInterface printerInterface;
-
+    private static String TAG = "SenraisePrinterPlugin";
 
     ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
@@ -79,7 +79,7 @@ public class SenraisePrinterPlugin implements FlutterPlugin, MethodCallHandler {
                 int[] alignment = (int[]) call.argument("alignment");
                 String[] arr = new String[text.size()];
                 arr = text.toArray(arr);
-                printerInterface.printTableRow(arr, weight, alignment );
+                printerInterface.printTableText(arr, weight, alignment );
                 result.success("printTableRow success");
             } else if (call.method.equals("printBarCode")) {
                 printerInterface.printBarCode(call.argument("data"),call.argument("symbology"),call.argument("height"),call.argument("width"));
